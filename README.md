@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌳 Filetr.ee
 
-## Getting Started
+Filetr.ee is a comprehensive resource for developers, providing curated and organized folder structures for a wide range of programming languages, frameworks, and libraries.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+We understand the challenges developers face when setting up the perfect folder structure for their projects. Filetr.ee aims to simplify this process by offering well-organized folder structures for various development environments.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Filetr.ee provides folder structures for:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Frontend Frameworks
+- React.js
+- Next.js
+- Vue.js
+- Angular
+- Svelte
+- Solid.js
 
-## Learn More
+### Backend Frameworks
+- Node.js
+- Express.js
+- NestJS
+- Django
+- Flask
+- Laravel
+- Ruby on Rails
+- ASP.NET
 
-To learn more about Next.js, take a look at the following resources:
+### Mobile Development
+- React Native
+- Flutter
+- Swift
+- Kotlin
+- Ionic
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Programming Languages
+- Python
+- TypeScript
+- JavaScript
+- Java
+- C#
+- C++
+- PHP
+- Go
+- Rust
+- Ruby
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Data Science & Machine Learning
+- Jupyter Notebooks (Python)
+- R
+- TensorFlow
+- PyTorch
 
-## Deploy on Vercel
+### Game Development
+- Unity (C#)
+- Unreal Engine (C++)
+- Godot
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### DevOps & Cloud
+- Docker Projects
+- Kubernetes Configurations
+- AWS Lambda
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Miscellaneous
+- WordPress Plugin Development
+- Electron.js Apps
+- Shopify App Development
+
+## Usage
+
+Browse through our collection of folder structures and choose the one that best fits your project needs. Each structure is designed to follow best practices and conventions for its respective technology.
+
+## Contributing
+
+We welcome contributions from the developer community. If you have suggestions for improving existing structures or want to add new ones, please feel free to contribute.
+
+1. Fork the repository.
+2. Create a new branch with a descriptive name (`git checkout -b feature/your-feature-name`).
+3. Make your changes and commit them (`git commit -m "Add your message here"`).
+4. Push your changes to your fork (`git push origin feature/your-feature-name`).
+5. Open a pull request to the main repository.
+
+## License
+
+© 2025 🌳Filetr.ee. All rights reserved.
+
+## Privacy and Terms
+
+For information about our privacy policy and terms of service, please visit:
+- [Privacy Policy](https://filetr.ee/privacy)
+- [Terms of Service](https://filetr.ee/terms)
+
+## Contact
+
+For any queries or suggestions, please reach out to us through our website.
+
+## Acknowledgments
+
+A big thank you to all our contributors and stargazers who help make Filetr.ee a valuable resource for the developer community.
+
