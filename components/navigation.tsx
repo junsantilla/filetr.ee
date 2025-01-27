@@ -13,7 +13,7 @@ export function Navigation() {
 					</Link>
 					<div className="hidden items-center gap-6 md:flex">
 						<Link
-							href="https://github.com/junsantilla/filertr.ee/graphs/contributors"
+							href="https://github.com/junsantilla/filetr.ee/graphs/contributors"
 							className="text-sm text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
 							target="_blank"
 						>
@@ -24,7 +24,7 @@ export function Navigation() {
 				<div className="flex items-center gap-4">
 					<ThemeToggle />
 					<Link
-						href="https://github.com/junsantilla/filertr.ee/stargazers"
+						href="https://github.com/junsantilla/filetr.ee/stargazers"
 						target="_blank"
 					>
 						<Button variant="outline" size="sm">
