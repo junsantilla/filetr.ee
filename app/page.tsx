@@ -1,101 +1,131 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+	const categories = [
+		{
+			title: "Frontend Frameworks",
+			items: [
+				"React.js",
+				"Next.js",
+				"Vue.js",
+				"Angular",
+				"Svelte",
+				"Solid.js",
+			],
+		},
+		{
+			title: "Backend Frameworks",
+			items: [
+				"Node.js",
+				"Express.js",
+				"NestJS",
+				"Django",
+				"Flask",
+				"Laravel",
+				"Ruby on Rails",
+				"ASP.NET",
+			],
+		},
+		{
+			title: "Mobile Development",
+			items: ["React Native", "Flutter", "Swift", "Kotlin", "Ionic"],
+		},
+		{
+			title: "Programming Languages",
+			items: [
+				"Python",
+				"TypeScript",
+				"JavaScript",
+				"Java",
+				"C#",
+				"C++",
+				"PHP",
+				"Go",
+				"Rust",
+				"Ruby",
+			],
+		},
+		{
+			title: "Data Science & Machine Learning",
+			items: ["Jupyter Notebooks (Python)", "R", "TensorFlow", "PyTorch"],
+		},
+		{
+			title: "Game Development",
+			items: ["Unity (C#)", "Unreal Engine (C++)", "Godot"],
+		},
+		{
+			title: "DevOps & Cloud",
+			items: [
+				"Docker Projects",
+				"Kubernetes Configurations",
+				"AWS Lambda",
+			],
+		},
+		{
+			title: "Miscellaneous",
+			items: [
+				"WordPress Plugin Development",
+				"Electron.js Apps",
+				"Shopify App Development",
+			],
+		},
+	];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+	return (
+		<>
+			<section className="mx-auto max-w-5xl px-4 py-20 text-left sm:text-center">
+				<div className="relative">
+					{/* <p className="mx-auto mb-8 max-w-3xl text-xl text-neutral-500 dark:text-neutral-400">
+						Your go-to resource for folder structures in
+						programming!
+					</p> */}
+					<h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+						Developer Folder & File Structures
+					</h1>
+					<p className="mx-auto mb-12 max-w-3xl text-lg text-neutral-500 dark:text-neutral-400">
+						We know how challenging it can be to set up the perfect
+						folder structure for your projects. Filetr.ee provides
+						curated and organized folder structures for a wide range
+						of programming languages, frameworks, and libraries.
+					</p>
+				</div>
+
+				{/* Categories Grid */}
+				<div className="mt-20 space-y-16">
+					{categories.map((category, index) => (
+						<div key={index} className="mb-16">
+							<h3 className="mb-8 text-xl font-semibold">
+								{category.title}
+							</h3>
+							<div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
+								{category.items.map((item, itemIndex) => (
+									<Button
+										key={itemIndex}
+										variant="outline"
+										className="h-auto justify-between p-4 text-left hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 hover:from-purple-950/20 hover:to-blue-950/20"
+										asChild
+									>
+										<Link
+											href={`/structures/${item
+												.toLowerCase()
+												.replace(/[\s.()#]/g, "-")}`}
+										>
+											<div>
+												<div className="font-medium">
+													{item}
+												</div>
+											</div>
+											<ArrowRight className="h-4 w-4" />
+										</Link>
+									</Button>
+								))}
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+		</>
+	);
 }
