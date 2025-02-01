@@ -5,7 +5,7 @@ export function AnnouncementBar() {
 		<div className="bg-gradient-to-r from-purple-600 to-blue-600 p-3 text-center text-sm text-white">
 			🌟 We are Open Source! Check out our repository on{" "}
 			<Link
-				href="https://github.com/junsantilla/filertr.ee"
+				href="https://github.com/junsantilla/filetr.ee"
 				className="underline inline"
 				target="_blank"
 			>
