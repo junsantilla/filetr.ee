@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
 	title: "Filetr.ee - Developer Folder & File Structures",
@@ -32,6 +33,7 @@ export default function RootLayout({
 					<main className="flex-grow">{children}</main>
 					<Footer />
 				</ThemeProvider>
+				<Analytics />
 			</body>
 		</html>
 	);
