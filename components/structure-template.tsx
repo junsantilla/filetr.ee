@@ -75,20 +75,6 @@ export function StructureTemplate({
 					</div>
 
 					<div className="space-y-6">
-						<section>
-							<h2 className="mb-4 text-xl font-semibold">
-								Overview
-							</h2>
-							<p className="text-neutral-500 text-base dark:text-neutral-400">
-								{activeTab === "basic" &&
-									"This basic structure is ideal for small projects or when learning. It keeps things simple and easy to understand."}
-								{activeTab === "intermediate" &&
-									"This intermediate structure introduces more organization. It's suitable for medium-sized projects."}
-								{activeTab === "advanced" &&
-									"This advanced structure follows a feature-first organization pattern, making it easy to manage large applications. It separates concerns while keeping related files close together, improving developer experience and code maintainability."}
-							</p>
-						</section>
-
 						<section className="space-y-4">
 							<h2 className="text-xl font-semibold">
 								Directory Structure Explanation
