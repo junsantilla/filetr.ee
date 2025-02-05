@@ -22,7 +22,7 @@ export const metadata = {
       },
     ],
     site_name: "filetr.ee",
-    url: "https://filetr.ee/structures/next-js",
+    url: "https://filetr.ee/structures/react-js",
     type: "website",
   },
   mobile: {

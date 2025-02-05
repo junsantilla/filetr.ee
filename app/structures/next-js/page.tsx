@@ -23,7 +23,7 @@ export const metadata = {
       },
     ],
     site_name: "filetr.ee",
-    url: "https://locahost:3000/structures/next-js",
+    url: "https://filetr.ee/structures/next-js",
   },
   theme_color: "#000000",
 };
@@ -679,7 +679,7 @@ export default function NextJsStructurePage() {
   const title = "Next.js Project Structure";
   const description =
     "Learn how to structure your Next.js project for scalability and maintainability.";
-  const baseUrl = "http://localhost:3000"; // Ensure full URL
+  const baseUrl = "http://filetr.ee"; // Ensure full URL
   const imageUrl = `${baseUrl}/images/og-next.png`;
   const renderExplanations = (explanations: ExplanationItem[]) => (
     <>
