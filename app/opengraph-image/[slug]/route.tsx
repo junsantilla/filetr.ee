@@ -13,7 +13,6 @@ export async function GET() {
   ].join("\n"); // Converts array to text with line breaks
 
   // **GitHub-Themed Background Color**
-  const githubColor = "#0d1117"; // Matches GitHub icon color
   const textColor = "#ffffff"; // White text for contrast
   const leftPadding = "100px"; // Consistent padding on left side
 
