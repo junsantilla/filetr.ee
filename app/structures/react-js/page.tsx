@@ -15,7 +15,7 @@ export const metadata = {
       "Learn how to structure your Next.js project for scalability and maintainability.",
     images: [
       {
-        url: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        url: "/opengraph-images/next-js",
         width: 1200,
         height: 630,
         alt: "Next.js Project Structure Overview",
