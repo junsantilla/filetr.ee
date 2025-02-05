@@ -703,7 +703,7 @@ export default function NextJsStructurePage() {
           property="og:image:alt"
           content="Next.js Project Structure Overview"
         />
-        <meta property="og:site_name" content="yourwebsite.com" />
+        <meta property="og:site_name" content="filetr.ee" />
         <meta
           property="og:url"
           content={`https://freetr.ee/structures/next-js?title=${encodeURIComponent(

@@ -22,7 +22,7 @@ export const metadata = {
       },
     ],
     site_name: "filetr.ee",
-    url: "https://filetr.ee/structures/homepage",
+    url: "https://filetr.ee/homepage",
     type: "website",
   },
   mobile: {
@@ -112,9 +112,9 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Next.js Project Structure Overview"
+          content="Web Project Structure Overview"
         />
-        <meta property="og:site_name" content="yourwebsite.com" />
+        <meta property="og:site_name" content="filetr.ee" />
         <meta
           property="og:url"
           content={`https://freetr.ee/structures/next-js?title=${encodeURIComponent(
