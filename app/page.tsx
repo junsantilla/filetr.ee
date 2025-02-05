@@ -4,32 +4,32 @@ import { Button } from "@/components/ui/button";
 import Head from "next/head";
 
 export const metadata = {
-  title: "Next.js Project Structure",
+  title: "Web Project Structure",
   description:
-    "A scalable and maintainable folder structure for Next.js applications",
+    "A scalable and maintainable folder structure for Web applications",
   keywords:
     "filetr.ee, developer filetr.ee, how to become a developer, frontend developer filetr.ee, frontend developer filetr.ee 2025, backend developer filetr.ee, backend developer filetr.ee 2025, sre filetr.ee, sre filetr.ee 2025, devops filetr.ee, devops filetr.ee 2025, android developer filetr.ee, android developer filetr.ee 2025, dba filetr.ee, dba filetr.ee 2025, blockchain developer filetr.ee, blockchain developer filetr.ee 2025, qa filetr.ee, qa filetr.ee 2025, qa engineer filetr.ee, qa engineer filetr.ee 2025, software architect filetr.ee, software architect filetr.ee 2025, asp.net core developer filetr.ee, asp.net core developer filetr.ee 2025, react developer filetr.ee, react developer filetr.ee 2025, angular developer filetr.ee, angular developer filetr.ee 2025, vue developer filetr.ee, vue developer filetr.ee 2025, node.js developer filetr.ee, node.js developer filetr.ee 2025, javascript developer filetr.ee, javascript developer filetr.ee 2025, python developer filetr.ee, python developer filetr.ee 2025, go developer filetr.ee, go developer filetr.ee 2025, java developer filetr.ee, java developer filetr.ee 2025, design system filetr.ee, design system filetr.ee 2025, software design filetr.ee, software design filetr.ee 2025, graphql filetr.ee, graphql filetr.ee 2025",
   openGraph: {
-    title: "Next.js Project Structure",
+    title: "Web Project Structure",
     description:
-      "Learn how to structure your Next.js project for scalability and maintainability.",
+      "Learn how to structure your Web project for scalability and maintainability.",
     images: [
       {
-        url: "/opengraph-images/next-js",
+        url: "/opengraph-images/homepage",
         width: 1200,
         height: 630,
-        alt: "Next.js Project Structure Overview",
+        alt: "Web Project Structure Overview",
       },
     ],
     site_name: "filetr.ee",
-    url: "https://filetr.ee/structures/react-js",
+    url: "https://filetr.ee/structures/homepage",
     type: "website",
   },
   mobile: {
     web_app_capable: "yes",
     apple_mobile_web_app_capable: "yes",
     apple_mobile_web_app_status_bar_style: "black-translucent",
-    apple_mobile_web_app_title: "Next.js Structure Guide",
+    apple_mobile_web_app_title: "Web Structure Guide",
   },
   theme_color: "#004a89",
 };
