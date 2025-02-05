@@ -1,6 +1,32 @@
+// import DynamicMetadata from "@/components/dynamicMetatdata";
 import { StructureTemplate } from "@/components/structure-template";
 import { Badge } from "@/components/ui/badge";
 import { Folder, FileText } from "lucide-react";
+import Head from "next/head";
+
+export const metadata = {
+  title: "Next.js Project Structure",
+  description:
+    "A scalable and maintainable folder structure for Next.js applications",
+  keywords:
+    "filetr.ee, developer filetr.ee, how to become a developer, frontend developer filetr.ee, frontend developer filetr.ee 2025, backend developer filetr.ee, backend developer filetr.ee 2025, sre filetr.ee, sre filetr.ee 2025, devops filetr.ee, devops filetr.ee 2025, android developer filetr.ee, android developer filetr.ee 2025, dba filetr.ee, dba filetr.ee 2025, blockchain developer filetr.ee, blockchain developer filetr.ee 2025, qa filetr.ee, qa filetr.ee 2025, qa engineer filetr.ee, qa engineer filetr.ee 2025, software architect filetr.ee, software architect filetr.ee 2025, asp.net core developer filetr.ee, asp.net core developer filetr.ee 2025, react developer filetr.ee, react developer filetr.ee 2025, angular developer filetr.ee, angular developer filetr.ee 2025, vue developer filetr.ee, vue developer filetr.ee 2025, node.js developer filetr.ee, node.js developer filetr.ee 2025, javascript developer filetr.ee, javascript developer filetr.ee 2025, python developer filetr.ee, python developer filetr.ee 2025, go developer filetr.ee, go developer filetr.ee 2025, java developer filetr.ee, java developer filetr.ee 2025, design system filetr.ee, design system filetr.ee 2025, software design filetr.ee, software design filetr.ee 2025, graphql filetr.ee, graphql filetr.ee 2025",
+  openGraph: {
+    title: "Next.js Project Structure",
+    description:
+      "Learn how to structure your Next.js project for scalability and maintainability.",
+    images: [
+      {
+        url: "/opengraph-image/next-js",
+        width: 1200,
+        height: 630,
+        alt: "Next.js Project Structure Overview",
+      },
+    ],
+    site_name: "filetr.ee",
+    url: "https://locahost:3000/structures/next-js",
+  },
+  theme_color: "#000000",
+};
 
 interface FileTreeItem {
   name: string;
@@ -649,7 +675,12 @@ const BREADCRUMB_ITEMS = [
   { label: "Next.js", href: "/structures/next-js" },
 ] as const;
 
-export default function ReactJsStructurePage() {
+export default function NextJsStructurePage() {
+  const title = "Next.js Project Structure";
+  const description =
+    "Learn how to structure your Next.js project for scalability and maintainability.";
+  const baseUrl = "http://localhost:3000"; // Ensure full URL
+  const imageUrl = `${baseUrl}/images/og-next.png`;
   const renderExplanations = (explanations: ExplanationItem[]) => (
     <>
       {explanations.map((item, index) => (
@@ -659,20 +690,55 @@ export default function ReactJsStructurePage() {
   );
 
   return (
-    <StructureTemplate
-      title="Next.js Project Structure"
-      description="A scalable and maintainable folder structure for Next.js applications"
-      breadcrumbItems={[...BREADCRUMB_ITEMS]}
-      structures={{
-        basic: basicStructure,
-        intermediate: intermediateStructure,
-        advanced: advancedStructure,
-      }}
-      explanations={{
-        basic: renderExplanations(basicExplanations),
-        intermediate: renderExplanations(intermediateExplanations),
-        advanced: renderExplanations(advancedExplanations),
-      }}
-    />
+    <>
+      <Head>
+        <meta
+          name="keywords"
+          content="Next.js, Project Structure, Next.js Best Practices, Folder Structure, Next.js Metadata, Scalable Next.js App"
+        />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Next.js Project Structure Overview"
+        />
+        <meta property="og:site_name" content="yourwebsite.com" />
+        <meta
+          property="og:url"
+          content={`https://freetr.ee/structures/next-js?title=${encodeURIComponent(
+            title
+          )}`}
+        />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Next.js Structure Guide"
+        />
+        <meta name="theme-color" content="#000000" />
+      </Head>
+      <StructureTemplate
+        title="Next.js Project Structure"
+        description="A scalable and maintainable folder structure for Next.js applications"
+        breadcrumbItems={[...BREADCRUMB_ITEMS]}
+        structures={{
+          basic: basicStructure,
+          intermediate: intermediateStructure,
+          advanced: advancedStructure,
+        }}
+        explanations={{
+          basic: renderExplanations(basicExplanations),
+          intermediate: renderExplanations(intermediateExplanations),
+          advanced: renderExplanations(advancedExplanations),
+        }}
+      />
+    </>
   );
 }
