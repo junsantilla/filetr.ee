@@ -12,8 +12,7 @@ export function Navigation() {
 	// Fetch the number of stars on the GitHub repository
 	const { data } = useSWR(
 		"https://api.github.com/repos/junsantilla/filetr.ee",
-		fetcher,
-		{ refreshInterval: 60000 }
+		fetcher
 	);
 
 	const stars = data?.stargazers_count ?? "—";
