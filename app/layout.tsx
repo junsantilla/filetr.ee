@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 		"Curated folder structures for programming languages and frameworks at filetr.ee",
 };
 
+const isLocalhost = process.env.NODE_ENV === "development";
+
 export default function RootLayout({
 	children,
 }: {
@@ -33,7 +35,7 @@ export default function RootLayout({
 					<main className="flex-grow">{children}</main>
 					<Footer />
 				</ThemeProvider>
-				<Analytics />
+				{!isLocalhost && <Analytics />}
 			</body>
 		</html>
 	);
