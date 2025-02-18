@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AnnouncementBar } from "@/components/announcement-bar";
@@ -23,7 +24,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="dark">
 			<body
-				className={`${GeistMono.className} antialiased min-h-screen flex flex-col`}
+				className={`${GeistSans.className} antialiased min-h-screen flex flex-col`}
 			>
 				<ThemeProvider
 					attribute="class"
