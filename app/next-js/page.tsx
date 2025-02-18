@@ -19,8 +19,7 @@ export const metadata: Metadata = {
 				alt: "Next.js Project Structure Overview",
 			},
 		],
-
-		url: "/structures/react-js",
+		url: "/next-js",
 	},
 };
 
@@ -668,8 +667,7 @@ function ExplanationSection({ title, icon, description }: ExplanationItem) {
 
 const BREADCRUMB_ITEMS = [
 	{ label: "Home", href: "/" },
-	{ label: "Structures", href: "/structures" },
-	{ label: "Next.js", href: "/structures/next-js" },
+	{ label: "Next.js", href: "/next-js" },
 ] as const;
 
 export default function NextJsStructurePage() {

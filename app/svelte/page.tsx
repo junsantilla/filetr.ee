@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 				alt: "Svelte Project Structure Overview",
 			},
 		],
-		url: "/structures/svelte",
+		url: "/svelte",
 	},
 };
 
@@ -561,8 +561,7 @@ const advancedExplanations: ExplanationItem[] = [
 
 const BREADCRUMB_ITEMS = [
 	{ label: "Home", href: "/" },
-	{ label: "Structures", href: "/structures" },
-	{ label: "Svelte", href: "/structures/svelte" },
+	{ label: "Svelte", href: "/svelte" },
 ] as const;
 
 export default function SvelteStructurePage() {

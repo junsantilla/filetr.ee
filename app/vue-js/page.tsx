@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 				alt: "Vue.js Project Structure Overview",
 			},
 		],
-		url: "/structures/vue-js",
+		url: "/vue-js",
 	},
 };
 
@@ -590,8 +590,7 @@ function ExplanationSection({ title, icon, description }: ExplanationItem) {
 
 const BREADCRUMB_ITEMS = [
 	{ label: "Home", href: "/" },
-	{ label: "Structures", href: "/structures" },
-	{ label: "Vue.js", href: "/structures/vue-js" },
+	{ label: "Vue.js", href: "/vue-js" },
 ] as const;
 
 export default function VueJsStructurePage() {

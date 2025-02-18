@@ -108,7 +108,7 @@ export default function Home() {
 										asChild
 									>
 										<Link
-											href={`/structures/${item
+											href={`/${item
 												.toLowerCase()
 												.replace(/[\s.()#]/g, "-")}`}
 										>
