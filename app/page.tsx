@@ -104,7 +104,7 @@ export default function Home() {
 									<Button
 										key={itemIndex}
 										variant="outline"
-										className="h-auto justify-between p-4 text-left hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 hover:from-purple-950/20 hover:to-blue-950/20"
+										className="h-auto justify-between p-4 text-left hover:bg-gradient-to-r hover:from-purple-950/20 hover:to-blue-950/20"
 										asChild
 									>
 										<Link
