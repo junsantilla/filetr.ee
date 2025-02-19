@@ -10,7 +10,7 @@ export default function Home() {
 				"React.js",
 				"Next.js",
 				"Vue.js",
-				"Angular",
+				"Angular.js",
 				"Svelte",
 				"Solid.js",
 			],
