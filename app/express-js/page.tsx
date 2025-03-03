@@ -1,8 +1,14 @@
 import { StructureTemplate } from "@/components/structure-template";
 import { Metadata } from "next";
 import type { ExplanationItem } from "./data/fileStructureExplanations";
-import { basicStructure } from "./data/fileStructure";
-import { basicExplanations } from "./data/fileStructureExplanations";
+import {
+	basicStructure,
+	intermediateFileStructure,
+} from "./data/fileStructure";
+import {
+	basicExplanations,
+	intermediateExplanations,
+} from "./data/fileStructureExplanations";
 import { FileText, Folder } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -67,12 +73,12 @@ export default function ExpressJsStructurePage() {
 				breadcrumbItems={[...BREADCRUMB_ITEMS]}
 				structures={{
 					basic: basicStructure,
-					intermediate: [],
+					intermediate: intermediateFileStructure,
 					advanced: [],
 				}}
 				explanations={{
 					basic: renderExplanations(basicExplanations),
-					intermediate: renderExplanations([]),
+					intermediate: renderExplanations(intermediateExplanations),
 					advanced: renderExplanations([]),
 				}}
 			/>
