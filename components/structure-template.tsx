@@ -38,7 +38,7 @@ export function StructureTemplate({
 
 	return (
 		<>
-			<div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
+			<div className="border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
 				<div className="mx-auto max-w-7xl">
 					<div className="flex h-14 items-center justify-between overflow-x-auto scrollbar-hide px-4">
 						<Breadcrumb
@@ -68,7 +68,11 @@ export function StructureTemplate({
 							<h3 className="mb-4 font-medium">File Structure</h3>
 							<div className="pt-1">
 								<FileTreeComponent
-									items={structures[activeTab as keyof typeof structures]}
+									items={
+										structures[
+											activeTab as keyof typeof structures
+										]
+									}
 								/>
 							</div>
 						</div>
@@ -79,7 +83,11 @@ export function StructureTemplate({
 									Directory Structure Explanation
 								</h2>
 								<div className="space-y-4 text-neutral-500 text-base dark:text-neutral-400">
-									{explanations[activeTab as keyof typeof explanations]}
+									{
+										explanations[
+											activeTab as keyof typeof explanations
+										]
+									}
 								</div>
 							</section>
 						</div>
@@ -89,12 +97,12 @@ export function StructureTemplate({
 				<div className="flex flex-col items-center justify-center h-[calc(100vh-300px)] p-4">
 					<h1 className="text-4xl font-bold mb-4">Coming Soon</h1>
 					<p className="text-lg mb-4">
-						The content you are looking for is not available just yet, but we
-						are working hard to bring it to you soon!
+						The content you are looking for is not available just
+						yet, but we are working hard to bring it to you soon!
 					</p>
 					<p>
-						Filetr.ee is an open-source project. If you want to contribute,
-						please check our{" "}
+						Filetr.ee is an open-source project. If you want to
+						contribute, please check our{" "}
 						<Link
 							href="https://github.com/junsantilla/filetr.ee"
 							className="underline"

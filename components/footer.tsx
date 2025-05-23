@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
 	return (
-		<footer className="mt-auto border-t bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
+		<footer className="mt-auto border-t dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
 			<div className="mx-auto max-w-7xl px-4 py-6">
 				<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 					<div className="text-sm text-neutral-500 dark:text-neutral-400">

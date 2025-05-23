@@ -18,7 +18,7 @@ export function Navigation() {
 	const stars = data?.stargazers_count ?? "—";
 
 	return (
-		<header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
+		<header className="sticky top-0 z-50 border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
 			<nav className="mx-auto flex max-w-7xl items-center justify-between p-4">
 				<div className="flex items-center gap-6">
 					<Link href="/" className="text-xl font-bold">
