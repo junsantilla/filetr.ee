@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { FileTreeComponent, type FileTreeItem } from "@/components/file-tree";
 import Link from "next/link";
+import Giscus from "@giscus/react";
 
 interface StructureTemplateProps {
 	title: string;
@@ -114,6 +115,24 @@ export function StructureTemplate({
 					</p>
 				</div>
 			)}
+
+			<div className="mx-auto max-w-7xl px-4 mb-10 py-6">
+				<Giscus
+					id="comments"
+					repo="junsantilla/filetr.ee"
+					repoId="R_kgDONwLoyQ"
+					category="General"
+					categoryId="DIC_kwDONwLoyc4CqgY6"
+					mapping="pathname"
+					term="Welcome to @giscus/react component!"
+					reactionsEnabled="1"
+					emitMetadata="0"
+					inputPosition="top"
+					theme="transparent_dark"
+					lang="en"
+					loading="lazy"
+				/>
+			</div>
 		</>
 	);
 }
