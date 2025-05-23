@@ -15,18 +15,16 @@ export const metadata: Metadata = {
 		"Curated folder structures for programming languages and frameworks at filetr.ee",
 };
 
-const isLocalhost = process.env.NODE_ENV === "development";
-
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<GoogleTagManager gtmId="G-VSX61LB6TV" />
+		<html lang="en" suppressHydrationWarning>
 			<body
 				className={`${GeistSans.className} antialiased min-h-screen flex flex-col`}
+				suppressHydrationWarning
 			>
 				<ThemeProvider
 					attribute="class"
@@ -39,7 +37,12 @@ export default function RootLayout({
 					<main className="flex-grow">{children}</main>
 					<Footer />
 				</ThemeProvider>
-				{!isLocalhost && <Analytics />}
+				{process.env.NODE_ENV === "production" && (
+					<>
+						<Analytics />
+						<GoogleTagManager gtmId="G-VSX61LB6TV" />
+					</>
+				)}
 			</body>
 		</html>
 	);
