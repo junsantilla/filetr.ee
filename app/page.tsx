@@ -1,6 +1,53 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Filetr.ee - Developer Folder & File Structures",
+	description:
+		"Curated folder structures for programming languages and frameworks at filetr.ee. Find scalable and maintainable project structures for React, Next.js, Vue, Angular, Python, Node.js, and 40+ more technologies.",
+	openGraph: {
+		title: "Filetr.ee - Developer Folder & File Structures",
+		description:
+			"Curated folder structures for programming languages and frameworks. Find scalable project structures for React, Next.js, Vue, Angular, Python, Node.js, and 40+ more technologies.",
+		url: "https://filetr.ee",
+		siteName: "Filetr.ee",
+		images: [
+			{
+				url: "/opengraph-image",
+				width: 1200,
+				height: 630,
+				alt: "Filetr.ee - Developer Folder & File Structures",
+			},
+		],
+		locale: "en_US",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Filetr.ee - Developer Folder & File Structures",
+		description:
+			"Curated folder structures for programming languages and frameworks. Find scalable project structures for 40+ technologies.",
+		images: ["/opengraph-image"],
+	},
+	keywords: [
+		"project structure",
+		"folder structure",
+		"programming",
+		"development",
+		"react",
+		"nextjs",
+		"vue",
+		"angular",
+		"python",
+		"nodejs",
+		"typescript",
+		"javascript",
+		"best practices",
+		"scalable architecture",
+	],
+};
 
 export default function Home() {
 	const categories = [
