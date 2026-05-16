@@ -31,43 +31,58 @@ function FileTreeComponent({ items, level = 0 }: FileTreeComponentProps) {
 	};
 
 	return (
-		<ul className="space-y-0.5">
-			{items.map((item, index) => (
-				<li key={index} className="relative">
-					<div
-						className={`
-              group flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm
-              ${
-								item.children
-									? "font-medium cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800"
-									: "text-neutral-500 dark:text-neutral-400"
-							}
-              ${level === 0 ? "text-base" : "text-sm"}
-            `}
-						onClick={() => item.children && toggleFolder(item.name)}
-					>
-						{item.children && (
-							<ChevronDown
-								className={`h-4 w-4 shrink-0 transition-transform ${
-									expandedFolders[item.name] ? "rotate-0" : "-rotate-90"
+		<ul className="space-y-0.5 font-mono">
+			{items.map((item, index) => {
+				const isFolder = item.type === "folder";
+				const hasChildren = !!item.children;
+				const isExpanded = expandedFolders[item.name];
+
+				return (
+					<li key={index} className="relative">
+						<div
+							className={`group flex items-center gap-2 rounded-md px-2 py-1 text-[13px] ${
+								hasChildren
+									? "cursor-pointer hover:bg-emerald-500/5 dark:hover:bg-emerald-500/10"
+									: ""
+							}`}
+							onClick={() => hasChildren && toggleFolder(item.name)}
+						>
+							{hasChildren ? (
+								<ChevronDown
+									className={`h-3.5 w-3.5 shrink-0 text-neutral-400 transition-transform dark:text-neutral-600 ${
+										isExpanded ? "rotate-0" : "-rotate-90"
+									}`}
+								/>
+							) : (
+								<span className="w-3.5 shrink-0" />
+							)}
+							{isFolder ? (
+								<Folder className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
+							) : (
+								<File className="h-4 w-4 shrink-0 text-neutral-400 dark:text-neutral-500" />
+							)}
+							<span
+								className={`flex-grow truncate ${
+									isFolder
+										? "font-medium text-neutral-900 dark:text-neutral-100"
+										: "text-neutral-600 dark:text-neutral-400"
 								}`}
-							/>
-						)}
-						{!item.children && <span className="w-0" />}
-						{item.type === "folder" ? (
-							<Folder className="h-4 w-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
-						) : (
-							<File className="h-4 w-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
-						)}
-						<span className="flex-grow truncate">{item.name}</span>
-					</div>
-					{item.children && expandedFolders[item.name] && (
-						<div className="relative ml-4 mt-0.5 pl-4 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-neutral-200 dark:before:bg-neutral-800">
-							<FileTreeComponent items={item.children} level={level + 1} />
+							>
+								{item.name}
+								{isFolder ? "/" : ""}
+							</span>
 						</div>
-					)}
-				</li>
-			))}
+						{hasChildren && isExpanded && (
+							<div className="relative ml-[10px] pl-3 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-neutral-200 dark:before:bg-neutral-800">
+								<FileTreeComponent
+									items={item.children!}
+									level={level + 1}
+								/>
+							</div>
+						)}
+					</li>
+				);
+			})}
 		</ul>
 	);
 }
