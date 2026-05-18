@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { Analytics } from "@vercel/analytics/next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { CookieBanner } from "@/components/cookie-banner";
+import { AnalyticsGate } from "@/components/analytics-gate";
 
 export const metadata: Metadata = {
 	title: "Filetr.ee - Developer Folder & File Structures",
@@ -35,14 +35,10 @@ export default function RootLayout({
 					<AnnouncementBar />
 					<Navigation />
 					<main className="flex-grow">{children}</main>
+					<CookieBanner />
 					<Footer />
 				</ThemeProvider>
-				{process.env.NODE_ENV === "production" && (
-					<>
-						<Analytics />
-						<GoogleTagManager gtmId="G-VSX61LB6TV" />
-					</>
-				)}
+				{process.env.NODE_ENV === "production" && <AnalyticsGate />}
 			</body>
 		</html>
 	);
