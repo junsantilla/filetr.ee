@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { CookieBanner } from "@/components/cookie-banner";
 import { AnalyticsGate } from "@/components/analytics-gate";
 
 export const metadata: Metadata = {
@@ -35,10 +34,9 @@ export default function RootLayout({
                     <AnnouncementBar />
                     <Navigation />
                     <main className="flex-grow">{children}</main>
-                    <CookieBanner />
                     <Footer />
                 </ThemeProvider>
-                {process.env.NODE_ENV === "production" && <AnalyticsGate />}
+                <AnalyticsGate />
             </body>
         </html>
     );
