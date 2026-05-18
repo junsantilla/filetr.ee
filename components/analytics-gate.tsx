@@ -9,23 +9,23 @@ const CONSENT_KEY = "cookie_consent";
 type ConsentValue = "accepted" | "rejected" | null;
 
 export function AnalyticsGate() {
-	const [consent, setConsent] = useState<ConsentValue>(null);
+    const [consent, setConsent] = useState<ConsentValue>(null);
 
-	useEffect(() => {
-		const stored = window.localStorage.getItem(CONSENT_KEY) as
-			| ConsentValue
-			| null;
-		setConsent(stored);
-	}, []);
+    useEffect(() => {
+        const stored = window.localStorage.getItem(
+            CONSENT_KEY,
+        ) as ConsentValue | null;
+        setConsent(stored);
+    }, []);
 
-	if (consent !== "accepted") {
-		return null;
-	}
+    if (consent !== "accepted") {
+        return null;
+    }
 
-	return (
-		<>
-			<Analytics />
-			<GoogleTagManager gtmId="G-VSX61LB6TV" />
-		</>
-	);
+    return (
+        <>
+            <Analytics />
+            <GoogleTagManager gtmId="G-VSX61LB6TV" />
+        </>
+    );
 }
