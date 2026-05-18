@@ -1,7 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge"; // Optimized for Edge API
-
 export async function GET() {
 	// 🔥 Static Hardcoded Data
 	const title = "Filetr.ee";
