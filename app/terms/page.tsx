@@ -55,7 +55,7 @@ export default function TermsPage() {
                 <section>
                     <h2 className="text-xl font-semibold">Disclaimer</h2>
                     <p className="mt-3 text-neutral-600 dark:text-neutral-300">
-                        The site is provided "as is" without warranties of any
+                        The site is provided &quot;as is&quot; without warranties of any
                         kind. We do not guarantee accuracy, completeness, or
                         availability.
                     </p>
