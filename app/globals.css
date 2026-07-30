@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Code block container */
+.wp-block-code,
+.cm-editor {
+    background: #0d1117;
+    color: #c9d1d9;
+    /* border-radius: 12px; */
+    overflow: hidden;
+    padding: 10px 20px;
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+/* Code scrolling */
+.cm-scroller {
+    overflow-x: auto;
+}
+
+/* Keywords: function, const, return, if */
+.tok-keyword {
+    color: #ff7b72;
+    font-weight: 600;
+}
+
+/* Function names */
+.tok-variableName.tok-definition {
+    color: #d2a8ff;
+}
+
+/* Normal variables */
+.tok-variableName {
+    color: #c9d1d9;
+}
+
+/* Types: string, number, custom types */
+.tok-typeName {
+    color: #79c0ff;
+}
+
+/* Strings */
+.tok-string2 {
+    color: #a5d6ff;
+}
+
+/* Numbers */
+.tok-number {
+    color: #79c0ff;
+}
+
+/* Operators = . => */
+.tok-operator {
+    color: #ff7b72;
+}
+
+/* Punctuation {} () ; */
+.tok-punctuation {
+    color: #8b949e;
+}
+
+/* Properties like split, map */
+.tok-propertyName {
+    color: #7ee787;
+}
+
+h2 {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
