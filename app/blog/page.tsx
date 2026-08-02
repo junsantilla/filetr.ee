@@ -17,9 +17,12 @@ export default async function BlogPage() {
         return (
             <main className="flex flex-col items-center pt-32">
                 <section>
-                    <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
                         Blog
                     </h1>
+                    {/* <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                        Blog
+                    </h1> */}
                     <p className="mb-12 max-w-3xl text-lg text-neutral-500 dark:text-neutral-400">
                         Explore practical guides, tutorials, best practices, and
                         development insights for modern web development. From

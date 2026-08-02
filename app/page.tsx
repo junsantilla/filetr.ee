@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FaDiscord } from "react-icons/fa";
 
 export default function Home() {
     const categories = [
@@ -81,15 +82,25 @@ export default function Home() {
 						Your go-to resource for folder structures in
 						programming!
 					</p> */}
-                    <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl ">
                         Developer Folder & File Structures
                     </h1>
-                    <p className="mx-auto mb-12 max-w-3xl text-lg text-neutral-500 dark:text-neutral-400">
+                    <p className="mx-auto mb-8 max-w-3xl text-lg text-neutral-500 dark:text-neutral-400">
                         We know how challenging it can be to set up the perfect
                         folder structure for your projects. Filetr.ee provides
                         curated and organized folder structures for a wide range
                         of programming languages, frameworks, and libraries.
                     </p>
+                    <Button variant="default" asChild>
+                        <Link
+                            href="https://discord.gg/HD2Su7Qyzu"
+                            target="_blank"
+                            title="Join our Discord community for discussions, support, and sharing your own folder structures."
+                        >
+                            <FaDiscord />
+                            Join Discord
+                        </Link>
+                    </Button>
                 </div>
 
                 {/* Categories Grid */}
