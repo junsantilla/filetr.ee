@@ -11,6 +11,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "*.wp.com",
             },
+            {
+                protocol: "https",
+                hostname: "avatars.githubusercontent.com",
+            },
         ],
     },
 };
