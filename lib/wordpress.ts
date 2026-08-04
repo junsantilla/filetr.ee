@@ -185,3 +185,58 @@ export async function getFeaturedPosts(limit: number = 3): Promise<BlogPost[]> {
     const posts = await getBlogPosts(limit);
     return posts || [];
 }
+
+export async function getBlogPostsByCategory(
+    categorySlug: string,
+    limit = 20,
+): Promise<BlogPost[]> {
+    try {
+        // Get category ID from slug
+        const categoryRes = await fetch(
+            `${WORDPRESS_API_URL}/categories?slug=${categorySlug}`,
+            {
+                next: {
+                    revalidate: 60,
+                },
+            },
+        );
+
+        if (!categoryRes.ok) {
+            console.error("Failed to fetch category");
+            return [];
+        }
+
+        const categories = await categoryRes.json();
+
+        if (!categories.length) {
+            return [];
+        }
+
+        const categoryId = categories[0].id;
+
+        // Get posts from category
+        const postsRes = await fetch(
+            `${WORDPRESS_API_URL}/posts?_embed&categories=${categoryId}&per_page=${limit}&orderby=date&order=desc`,
+            {
+                next: {
+                    revalidate: 60,
+                },
+            },
+        );
+
+        if (!postsRes.ok) {
+            console.error("Failed to fetch category posts");
+            return [];
+        }
+
+        const posts: WordPressPost[] = await postsRes.json();
+
+        return posts.map(transformPost);
+    } catch (error) {
+        console.error(
+            `Error fetching posts for category ${categorySlug}:`,
+            error,
+        );
+        return [];
+    }
+}
