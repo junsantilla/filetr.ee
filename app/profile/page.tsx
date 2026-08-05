@@ -4,6 +4,7 @@ import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import GithubRepositories from "@/components/GithubRepositories";
+import ImportedTemplates from "@/components/ImportedTemplates";
 
 export default async function Profile() {
     const session = await auth();
@@ -51,6 +52,18 @@ export default async function Profile() {
                         <p>Status: Active</p>
                     </div>
                 </div> */}
+            </div>
+
+            <div className="mt-8">
+                <h2 className="text-xl font-bold">Imported Templates</h2>
+
+                <p className="text-neutral-500">
+                    Your GitHub repositories added to FileTree.
+                </p>
+
+                <div className="mt-4">
+                    <ImportedTemplates />
+                </div>
             </div>
 
             <div className="mt-8">
