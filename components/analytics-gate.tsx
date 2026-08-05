@@ -15,7 +15,7 @@ export function AnalyticsGate() {
         <>
             <Analytics />
             <GoogleTagManager gtmId="G-VSX61LB6TV" />
-            <GoogleAnalytics gaId="G-L0JH3M24J2" />
+            <GoogleAnalytics gaId="G-VSX61LB6TV" />
         </>
     );
 }
