@@ -7,6 +7,7 @@ import { AnnouncementBar } from "@/components/announcement-bar";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { AnalyticsGate } from "@/components/analytics-gate";
+import AuthProvider from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
     title: "Filetr.ee - Developer Folder & File Structures",
@@ -25,18 +26,20 @@ export default function RootLayout({
                 className={`${GeistSans.className} antialiased min-h-screen flex flex-col`}
                 suppressHydrationWarning
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="dark"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    <AnnouncementBar />
-                    <Navigation />
-                    <main className="flex-grow">{children}</main>
-                    <Footer />
-                </ThemeProvider>
-                <AnalyticsGate />
+                <AuthProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="dark"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <AnnouncementBar />
+                        <Navigation />
+                        <main className="flex-grow">{children}</main>
+                        <Footer />
+                    </ThemeProvider>
+                    <AnalyticsGate />
+                </AuthProvider>
             </body>
         </html>
     );

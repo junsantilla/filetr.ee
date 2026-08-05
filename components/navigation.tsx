@@ -5,6 +5,8 @@ import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import useSWR from "swr";
+import LogoutButton from "./LogoutButton";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -16,6 +18,8 @@ export function Navigation() {
     );
 
     const stars = data?.stargazers_count ?? "—";
+
+    const { data: session } = useSession();
 
     return (
         <header className="sticky top-0 z-50 border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
@@ -41,7 +45,7 @@ export function Navigation() {
                     </div>
                 </div>
                 <div className="flex items-center gap-4">
-                    <ThemeToggle />
+                    {/* <ThemeToggle /> */}
                     <Link
                         href="https://github.com/junsantilla/filetr.ee/stargazers"
                         target="_blank"
@@ -51,6 +55,25 @@ export function Navigation() {
                             {stars} Stargazers
                         </Button>
                     </Link>
+                    {session ? (
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => signOut()}
+                        >
+                            Logout
+                        </Button>
+                    ) : (
+                        <Link href="/login">
+                            <Button
+                                variant="default"
+                                size="sm"
+                                // onClick={() => signIn("github")}
+                            >
+                                Login
+                            </Button>
+                        </Link>
+                    )}
                 </div>
             </nav>
         </header>
