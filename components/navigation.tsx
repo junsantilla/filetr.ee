@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import useSWR from "swr";
 import LogoutButton from "./LogoutButton";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -26,7 +27,14 @@ export function Navigation() {
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-4">
                 <div className="flex items-center gap-6">
                     <Link href="/" className="text-xl font-bold">
-                        🌳Filetr.ee
+                        <Image
+                            src="/logo.png"
+                            alt="Filetree Logo"
+                            width={32}
+                            height={32}
+                            className="mr-1 mb-2 inline-block"
+                        />
+                        Filetr.ee
                     </Link>
                     <div className="hidden items-center gap-6 md:flex">
                         <Link
@@ -55,7 +63,7 @@ export function Navigation() {
                             {stars} Stargazers
                         </Button>
                     </Link>
-                    {session ? (
+                    {/* {session ? (
                         <Button
                             variant="outline"
                             size="sm"
@@ -73,7 +81,7 @@ export function Navigation() {
                                 Login
                             </Button>
                         </Link>
-                    )}
+                    )} */}
                 </div>
             </nav>
         </header>
