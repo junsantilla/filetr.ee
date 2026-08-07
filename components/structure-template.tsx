@@ -30,7 +30,7 @@ export function StructureTemplate({
     structures,
     explanations,
 }: StructureTemplateProps) {
-    const [activeTab, setActiveTab] = useState("basic");
+    const [activeTab, setActiveTab] = useState("advanced");
 
     const tabs = [
         { label: "Basic", value: "basic" },
