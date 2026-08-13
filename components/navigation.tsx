@@ -12,58 +12,58 @@ import Image from "next/image";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function Navigation() {
-    // Fetch the number of stars on the GitHub repository
-    const { data } = useSWR(
-        "https://api.github.com/repos/junsantilla/filetr.ee",
-        fetcher,
-    );
+  // Fetch the number of stars on the GitHub repository
+  const { data } = useSWR(
+    "https://api.github.com/repos/junsantilla/filetr.ee",
+    fetcher,
+  );
 
-    const stars = data?.stargazers_count ?? "—";
+  const stars = data?.stargazers_count ?? "—";
 
-    const { data: session } = useSession();
+  const { data: session } = useSession();
 
-    return (
-        <header className="sticky top-0 z-50 border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-4">
-                <div className="flex items-center gap-6">
-                    <Link href="/" className="text-xl font-bold">
-                        <Image
-                            src="/logo.png"
-                            alt="Filetree Logo"
-                            width={32}
-                            height={32}
-                            className="mr-1 mb-2 inline-block"
-                        />
-                        Filetr.ee
-                    </Link>
-                    <div className="hidden items-center gap-6 md:flex">
-                        <Link
-                            href="/blog"
-                            className="text-sm text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
-                        >
-                            Blog
-                        </Link>
-                        <Link
-                            href="https://github.com/junsantilla/filetr.ee/graphs/contributors"
-                            className="text-sm text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
-                            target="_blank"
-                        >
-                            Contributors
-                        </Link>
-                    </div>
-                </div>
-                <div className="flex items-center gap-4">
-                    {/* <ThemeToggle /> */}
-                    <Link
-                        href="https://github.com/junsantilla/filetr.ee/stargazers"
-                        target="_blank"
-                    >
-                        <Button variant="outline" size="sm">
-                            <Github className="h-4 w-4" />
-                            {stars} Stargazers
-                        </Button>
-                    </Link>
-                    {/* {session ? (
+  return (
+    <header className="sticky top-0 z-50 border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4">
+        <div className="flex items-center gap-6">
+          <Link href="/" className="text-xl font-bold">
+            <Image
+              src="/logo.png"
+              alt="Filetree Logo"
+              width={32}
+              height={32}
+              className="mr-1 mb-2 inline-block"
+            />
+            Filetr.ee
+          </Link>
+          <div className="hidden items-center gap-6 md:flex">
+            <Link
+              href="/blog"
+              className="text-sm text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
+            >
+              Blog
+            </Link>
+            <Link
+              href="https://github.com/junsantilla/filetr.ee/graphs/contributors"
+              className="text-sm text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
+              target="_blank"
+            >
+              Contributors
+            </Link>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          {/* <ThemeToggle /> */}
+          <Link
+            href="https://github.com/junsantilla/filetr.ee"
+            target="_blank"
+          >
+            <Button variant="outline" size="sm">
+              <Github className="h-4 w-4" />
+              {stars} Stargazers
+            </Button>
+          </Link>
+          {/* {session ? (
                         <Button
                             variant="outline"
                             size="sm"
@@ -82,8 +82,8 @@ export function Navigation() {
                             </Button>
                         </Link>
                     )} */}
-                </div>
-            </nav>
-        </header>
-    );
+        </div>
+      </nav>
+    </header>
+  );
 }
