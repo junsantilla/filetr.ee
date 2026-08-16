@@ -1,19 +1,35 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
-const UserSchema = new Schema(
+export interface IUser {
+    githubId: string;
+    name?: string;
+    email?: string;
+    image?: string;
+    githubAccessToken?: string;
+}
+
+const UserSchema = new Schema<IUser>(
     {
         githubId: {
             type: String,
             unique: true,
             required: true,
         },
+
         name: String,
+
         email: String,
+
         image: String,
+
+        githubAccessToken: String,
     },
     {
         timestamps: true,
     },
 );
 
-export default models.User || model("User", UserSchema);
+const User =
+    (models.User as mongoose.Model<IUser>) || model<IUser>("User", UserSchema);
+
+export default User;
