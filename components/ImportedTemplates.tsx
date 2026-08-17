@@ -11,12 +11,24 @@ type Template = {
     category: string;
 };
 
-export default function ImportedTemplates() {
+interface ImportedTemplatesProps {
+    username?: string;
+    readOnly?: boolean;
+}
+
+export default function ImportedTemplates({
+    username,
+    readOnly = false,
+}: ImportedTemplatesProps) {
+    const endpoint = username
+        ? `/api/templates/public/${encodeURIComponent(username)}`
+        : "/api/templates";
+
     const {
         data: templates,
         error,
         mutate,
-    } = useSWR<Template[]>("/api/templates", fetcher);
+    } = useSWR<Template[]>(endpoint, fetcher);
 
     async function deleteTemplate(id: string) {
         const confirmed = confirm(
@@ -60,19 +72,21 @@ export default function ImportedTemplates() {
                         </p>
                     </div>
 
-                    <div className="flex gap-2">
-                        <Button size="sm" variant="outline">
-                            View
-                        </Button>
+                    {!readOnly && (
+                        <div className="flex gap-2">
+                            <Button size="sm" variant="outline">
+                                View
+                            </Button>
 
-                        <Button
-                            size="sm"
-                            variant="destructive"
-                            onClick={() => deleteTemplate(template._id)}
-                        >
-                            Delete
-                        </Button>
-                    </div>
+                            <Button
+                                size="sm"
+                                variant="destructive"
+                                onClick={() => deleteTemplate(template._id)}
+                            >
+                                Delete
+                            </Button>
+                        </div>
+                    )}
                 </div>
             ))}
         </div>

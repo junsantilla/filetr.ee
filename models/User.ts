@@ -2,6 +2,7 @@ import mongoose, { Schema, model, models } from "mongoose";
 
 export interface IUser {
     githubId: string;
+    username?: string;
     name?: string;
     email?: string;
     image?: string;
@@ -14,6 +15,12 @@ const UserSchema = new Schema<IUser>(
             type: String,
             unique: true,
             required: true,
+        },
+
+        username: {
+            type: String,
+            unique: true,
+            sparse: true,
         },
 
         name: String,

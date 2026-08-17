@@ -22,11 +22,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             await connectDB();
 
             const githubId = String(profile?.id);
+            const username =
+                profile && typeof profile.login === "string"
+                    ? profile.login
+                    : undefined;
 
             await User.findOneAndUpdate(
                 { githubId },
                 {
                     githubId,
+                    username,
                     name: user.name,
                     email: user.email,
                     image: user.image,

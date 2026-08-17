@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import GithubRepositories from "@/components/GithubRepositories";
@@ -19,13 +20,17 @@ export default async function Profile() {
         email: session.user?.email,
     }).lean();
 
+    const displayName = user?.name ?? session.user?.name ?? "User";
+    const displayEmail = user?.email ?? session.user?.email;
+    const displayImage = user?.image ?? session.user?.image;
+
     return (
         <main className="mx-auto max-w-2xl p-6">
             <div className="border dark:border-neutral-800">
                 <div className="flex items-center gap-4 p-6 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
-                    {session.user?.image && (
+                    {displayImage && (
                         <Image
-                            src={session.user.image}
+                            src={displayImage}
                             alt="Profile picture"
                             width={80}
                             height={80}
@@ -34,13 +39,18 @@ export default async function Profile() {
                     )}
 
                     <div>
-                        <h1 className="text-2xl font-bold">
-                            {session.user?.name}
-                        </h1>
+                        <h1 className="text-2xl font-bold">{displayName}</h1>
 
-                        <p className="text-neutral-500">
-                            {session.user?.email}
-                        </p>
+                        <p className="text-neutral-500">{displayEmail}</p>
+
+                        {user?.username && (
+                            <Link
+                                href={`/u/${user.username}`}
+                                className="mt-2 inline-block text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                            >
+                                View public profile
+                            </Link>
+                        )}
                     </div>
                 </div>
 
