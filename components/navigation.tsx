@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import useSWR from "swr";
 import LogoutButton from "./LogoutButton";
-import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -19,8 +18,6 @@ export function Navigation() {
     );
 
     const stars = data?.stargazers_count ?? "—";
-
-    const { data: session } = useSession();
 
     return (
         <header className="sticky top-0 z-50 border-b dark:border-neutral-800 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-neutral-950/95 dark:supports-[backdrop-filter]:bg-neutral-950/60">
