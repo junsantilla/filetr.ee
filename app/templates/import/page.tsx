@@ -1,12 +1,14 @@
 import ImportTemplateForm from "../../../components/ImportTemplateForm";
 
-export default function ImportTemplatePage({
+export default async function ImportTemplatePage({
     searchParams,
 }: {
-    searchParams: {
+    searchParams: Promise<{
         repo?: string;
-    };
+    }>;
 }) {
+    const { repo } = await searchParams;
+
     return (
         <main className="mx-auto max-w-2xl p-6">
             <h1 className="text-2xl font-bold">Import Template</h1>
@@ -15,7 +17,7 @@ export default function ImportTemplatePage({
                 Setup your GitHub repository as a FileTree template.
             </p>
 
-            <ImportTemplateForm repo={searchParams.repo || ""} />
+            <ImportTemplateForm repo={repo || ""} />
         </main>
     );
 }

@@ -4,12 +4,13 @@ import Template from "@/models/Template";
 
 export async function DELETE(
     req: Request,
-    { params }: { params: { id: string } },
+    { params }: { params: Promise<{ id: string }> },
 ) {
     try {
+        const { id } = await params;
         await connectDB();
 
-        await Template.findByIdAndDelete(params.id);
+        await Template.findByIdAndDelete(id);
 
         return NextResponse.json({
             success: true,
