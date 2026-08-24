@@ -4,72 +4,105 @@ import { Button } from "@/components/ui/button";
 import { FaDiscord } from "react-icons/fa";
 
 export default function Home() {
+    // Each item carries its own href. Deriving the slug from the label breaks
+    // for names containing "#", "+" or parentheses (C#, C++, Unity (C#), ...),
+    // so the route is stated explicitly instead.
     const categories = [
         {
             title: "Frontend Frameworks",
             items: [
-                "React.js",
-                "Next.js",
-                "Vue.js",
-                "Angular.js",
-                "Svelte",
-                "Solid.js",
+                { label: "React.js", href: "/react-js" },
+                { label: "Next.js", href: "/next-js" },
+                { label: "Vue.js", href: "/vue-js" },
+                { label: "Angular.js", href: "/angular-js" },
+                { label: "Svelte", href: "/svelte" },
+                { label: "Solid.js", href: "/solid-js" },
             ],
         },
         {
             title: "Backend Frameworks",
             items: [
-                "Node.js",
-                "Express.js",
-                "NestJS",
-                "Django",
-                "Flask",
-                "Laravel",
-                "Ruby on Rails",
-                "ASP.NET",
+                { label: "Node.js", href: "/node-js" },
+                { label: "Express.js", href: "/express-js" },
+                { label: "NestJS", href: "/nestjs" },
+                { label: "Django", href: "/django" },
+                { label: "Flask", href: "/flask" },
+                { label: "Laravel", href: "/laravel" },
+                { label: "Ruby on Rails", href: "/ruby-on-rails" },
+                { label: "ASP.NET", href: "/asp-net" },
             ],
         },
         {
             title: "Mobile Development",
-            items: ["React Native", "Flutter", "Swift", "Kotlin", "Ionic"],
+            items: [
+                { label: "React Native", href: "/react-native" },
+                { label: "Flutter", href: "/flutter" },
+                { label: "Swift", href: "/swift" },
+                { label: "Kotlin", href: "/kotlin" },
+                { label: "Ionic", href: "/ionic" },
+            ],
         },
         {
             title: "Programming Languages",
             items: [
-                "Python",
-                "TypeScript",
-                "JavaScript",
-                "Java",
-                "C#",
-                "C++",
-                "PHP",
-                "Go",
-                "Rust",
-                "Ruby",
+                { label: "Python", href: "/python" },
+                { label: "TypeScript", href: "/typescript" },
+                { label: "JavaScript", href: "/javascript" },
+                { label: "Java", href: "/java" },
+                { label: "C#", href: "/c-sharp" },
+                { label: "C++", href: "/c-plus-plus" },
+                { label: "PHP", href: "/php" },
+                { label: "Go", href: "/go" },
+                { label: "Rust", href: "/rust" },
+                { label: "Ruby", href: "/ruby" },
             ],
         },
         {
             title: "Data Science & Machine Learning",
-            items: ["Jupyter Notebooks (Python)", "R", "TensorFlow", "PyTorch"],
+            items: [
+                {
+                    label: "Jupyter Notebooks (Python)",
+                    href: "/jupyter-notebooks-(python)",
+                },
+                { label: "R", href: "/r" },
+                { label: "TensorFlow", href: "/tensorflow" },
+                { label: "PyTorch", href: "/pytorch" },
+            ],
         },
         {
             title: "Game Development",
-            items: ["Unity (C#)", "Unreal Engine (C++)", "Godot"],
+            items: [
+                { label: "Unity (C#)", href: "/unity-(c-sharp)" },
+                {
+                    label: "Unreal Engine (C++)",
+                    href: "/unreal-engine-(c-plus-plus)",
+                },
+                { label: "Godot", href: "/godot" },
+            ],
         },
         {
             title: "DevOps & Cloud",
             items: [
-                "Docker Projects",
-                "Kubernetes Configurations",
-                "AWS Lambda",
+                { label: "Docker Projects", href: "/docker-projects" },
+                {
+                    label: "Kubernetes Configurations",
+                    href: "/kubernetes-configurations",
+                },
+                { label: "AWS Lambda", href: "/aws-lambda" },
             ],
         },
         {
             title: "Miscellaneous",
             items: [
-                "WordPress Plugin Development",
-                "Electron.js Apps",
-                "Shopify App Development",
+                {
+                    label: "WordPress Plugin Development",
+                    href: "/wordpress-plugin-development",
+                },
+                { label: "Electron.js Apps", href: "/electron-js-apps" },
+                {
+                    label: "Shopify App Development",
+                    href: "/shopify-app-development",
+                },
             ],
         },
     ];
@@ -118,14 +151,10 @@ export default function Home() {
                                         className="h-auto justify-between p-4 text-left hover:bg-gradient-to-r hover:from-purple-950/20 hover:to-blue-950/20"
                                         asChild
                                     >
-                                        <Link
-                                            href={`/${item
-                                                .toLowerCase()
-                                                .replace(/[\s.()#]/g, "-")}`}
-                                        >
+                                        <Link href={item.href}>
                                             <div>
                                                 <div className="font-medium">
-                                                    {item}
+                                                    {item.label}
                                                 </div>
                                             </div>
                                             <ArrowRight className="h-4 w-4" />
