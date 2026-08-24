@@ -14,6 +14,7 @@ export async function GET(req: Request) {
         {
             method: "POST",
             headers: {
+                "Content-Type": "application/json",
                 Accept: "application/json",
             },
             body: JSON.stringify({
@@ -24,9 +25,9 @@ export async function GET(req: Request) {
         },
     );
 
-    const data = await tokenResponse.json();
-
-    console.log(data);
+    if (!tokenResponse.ok) {
+        return NextResponse.redirect(new URL("/profile?error=github", req.url));
+    }
 
     return NextResponse.redirect(new URL("/profile", req.url));
 }
