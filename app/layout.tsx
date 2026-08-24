@@ -10,6 +10,9 @@ import { AnalyticsGate } from "@/components/analytics-gate";
 import AuthProvider from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
+    // Relative openGraph image paths on the structure pages are resolved
+    // against this. Without it Next falls back to the deployment URL.
+    metadataBase: new URL("https://filetr.ee"),
     title: "Filetr.ee - Developer Folder & File Structures",
     description:
         "Curated folder structures for programming languages and frameworks at filetr.ee",
