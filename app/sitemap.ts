@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://filetr.ee";
 
     // Static pages
-    const staticPages = ["", "/privacy", "/terms"];
+    const staticPages = ["", "/blog", "/privacy", "/terms"];
 
     // Programming language and framework pages
     const techPages = [
